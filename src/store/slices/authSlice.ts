@@ -30,7 +30,7 @@ const initialState: AuthState = {
 export const fetchLogin = createAsyncThunk("auth/fetchLogin", async ({ email, password }: { email: string; password: string }) => {
   try {
     const response = await axios.post(
-      "https://lidermadeiras-api.onrender.com/api/login",
+      process.env.API_URL,
       { email, password },
       {
         withCredentials: true,

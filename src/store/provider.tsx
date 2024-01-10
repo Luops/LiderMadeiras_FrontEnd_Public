@@ -30,6 +30,9 @@ const UserContext = React.createContext<UserContextProps>({
   products: [],
 });
 
+// Define a URL da sua API
+const API_URL = process.env.API_URL;
+
 export async function getStaticProps() {
   try {
     const cookies = parseCookies();
@@ -68,7 +71,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       if (userId) {
         try {
           const response = await fetch(
-            `https://lidermadeiras-api.onrender.com/api/user/${userId}`,
+            `${API_URL}/api/user/${userId}`,
             {
               headers: {
                 Authorization: `Bearer ${userId}`,

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Define a URL da sua API
-const API_URL = "https://lidermadeiras-api.onrender.com";
+const API_URL = process.env.API_URL;
 
 // Define a função para buscar todos os produtos
 export async function putProduct(_id: string, updatedProductData: any) {
